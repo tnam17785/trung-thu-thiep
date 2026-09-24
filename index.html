@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#0a0a1a" />
+  <title>DLove · Món quà nhỏ</title>
+  <meta name="description" content="Một món quà nhỏ dành riêng cho bạn 🌕" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Loading -->
+  <div id="loading" class="screen">
+    <div class="moon-loader">
+      <div class="moon-glow"></div>
+      <div class="moon-body"></div>
+    </div>
+    <p class="load-title">Đang mở thiệp...</p>
+    <p class="load-sub">Chờ một chút, trăng đang lên.</p>
+  </div>
+
+  <!-- Scene 1: Thiệp -->
+  <div id="scene1" class="screen hidden">
+    <div class="sky">
+      <div class="stars" id="stars1"></div>
+      <div class="clouds">
+        <div class="cloud c1"></div>
+        <div class="cloud c2"></div>
+        <div class="cloud c3"></div>
+      </div>
+    </div>
+
+    <div class="logo">DLove.vn</div>
+
+    <div class="card-wrap">
+      <div class="heart-frame" id="heartFrame">
+        <div class="moon" id="moon">
+          <div class="moon-crater c1"></div>
+          <div class="moon-crater c2"></div>
+          <div class="moon-crater c3"></div>
+        </div>
+        <div class="lantern l1"></div>
+        <div class="lantern l2"></div>
+        <div class="lantern l3"></div>
+        <div class="lantern l4"></div>
+      </div>
+
+      <div class="branch">
+        <svg viewBox="0 0 320 120" class="branch-svg">
+          <path d="M10 90 Q80 70 140 85 T280 60" stroke="#4a3728" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <path d="M140 85 Q160 50 175 45" stroke="#4a3728" stroke-width="4" fill="none"/>
+          <path d="M200 75 Q220 40 235 35" stroke="#4a3728" stroke-width="3.5" fill="none"/>
+          <!-- leaves + flowers -->
+          <g class="flower" transform="translate(70,75)">
+            <ellipse cx="0" cy="0" rx="8" ry="5" fill="#c9a227" transform="rotate(-20)"/>
+            <ellipse cx="0" cy="0" rx="8" ry="5" fill="#e8c547" transform="rotate(40)"/>
+            <ellipse cx="0" cy="0" rx="8" ry="5" fill="#f0d060" transform="rotate(100)"/>
+            <circle cx="0" cy="0" r="3" fill="#fff3a0"/>
+          </g>
+          <g class="flower" transform="translate(110,68)">
+            <ellipse cx="0" cy="0" rx="7" ry="4.5" fill="#c9a227" transform="rotate(10)"/>
+            <ellipse cx="0" cy="0" rx="7" ry="4.5" fill="#e8c547" transform="rotate(70)"/>
+            <ellipse cx="0" cy="0" rx="7" ry="4.5" fill="#f0d060" transform="rotate(130)"/>
+            <circle cx="0" cy="0" r="2.5" fill="#fff3a0"/>
+          </g>
+          <g class="flower" transform="translate(155,55)">
+            <ellipse cx="0" cy="0" rx="9" ry="5.5" fill="#c9a227" transform="rotate(-30)"/>
+            <ellipse cx="0" cy="0" rx="9" ry="5.5" fill="#e8c547" transform="rotate(30)"/>
+            <ellipse cx="0" cy="0" rx="9" ry="5.5" fill="#f0d060" transform="rotate(90)"/>
+            <circle cx="0" cy="0" r="3.2" fill="#fff3a0"/>
+          </g>
+          <g class="flower" transform="translate(195,48)">
+            <ellipse cx="0" cy="0" rx="8" ry="5" fill="#c9a227" transform="rotate(20)"/>
+            <ellipse cx="0" cy="0" rx="8" ry="5" fill="#e8c547" transform="rotate(80)"/>
+            <ellipse cx="0" cy="0" rx="8" ry="5" fill="#f0d060" transform="rotate(140)"/>
+            <circle cx="0" cy="0" r="3" fill="#fff3a0"/>
+          </g>
+          <g class="flower" transform="translate(240,42)">
+            <ellipse cx="0" cy="0" rx="7" ry="4.5" fill="#c9a227" transform="rotate(-10)"/>
+            <ellipse cx="0" cy="0" rx="7" ry="4.5" fill="#e8c547" transform="rotate(50)"/>
+            <ellipse cx="0" cy="0" rx="7" ry="4.5" fill="#f0d060" transform="rotate(110)"/>
+            <circle cx="0" cy="0" r="2.8" fill="#fff3a0"/>
+          </g>
+          <!-- leaves -->
+          <ellipse cx="95" cy="80" rx="14" ry="7" fill="#3d6b3d" transform="rotate(-25 95 80)"/>
+          <ellipse cx="130" cy="72" rx="12" ry="6" fill="#4a7c4a" transform="rotate(15 130 72)"/>
+          <ellipse cx="175" cy="58" rx="13" ry="6.5" fill="#3d6b3d" transform="rotate(-40 175 58)"/>
+          <ellipse cx="220" cy="50" rx="11" ry="5.5" fill="#4a7c4a" transform="rotate(25 220 50)"/>
+        </svg>
+        <div class="rabbit" id="rabbit">
+          <div class="rabbit-body"></div>
+          <div class="rabbit-head">
+            <div class="ear left"></div>
+            <div class="ear right"></div>
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="nose"></div>
+          </div>
+          <div class="tail"></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="hint" id="hint">Ấn giữ vào mặt trăng</p>
+  </div>
+
+  <!-- Scene 2: Chữ bay + 3D -->
+  <div id="scene2" class="screen hidden">
+    <div class="space" id="space">
+      <div class="stars" id="stars2"></div>
+      <div class="text-cloud" id="textCloud">
+        <!-- texts injected by JS -->
+      </div>
+      <div class="floating-lanterns" id="floatLanterns"></div>
+      <div class="moon-rabbit" id="moonRabbit">
+        <div class="crescent"></div>
+        <div class="mini-rabbit"></div>
+      </div>
+    </div>
+    <div class="drag-hint">Trượt để xoay 3D</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
